@@ -976,3 +976,6 @@ else:
         fd = df.detach()
         return Connection(fd, readable, writable)
     reduction.register(Connection, reduce_connection)
+
+
+
