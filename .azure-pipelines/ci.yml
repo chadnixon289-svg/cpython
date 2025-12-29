@@ -5,7 +5,7 @@ jobs:
   displayName: Pre-build checks
 
   pool:
-    vmImage: ubuntu-24.04
+    vmImage: 
 
   steps:
   - template: ./prebuild-checks.yml
@@ -24,7 +24,7 @@ jobs:
       win32:
         arch: win32
         buildOpt: '-p Win32'
-        testRunTitle: '$(Build.SourceBranchName)-win32'
+        testRunTitle: '$(Build.SourceBranch)-win32'
         testRunPlatform: win32
       win64:
         arch: amd64
@@ -36,7 +36,7 @@ jobs:
   steps:
   - template: ./windows-steps.yml
 
-  - template: ./windows-layout-steps.yml
+  - template: ./windows-layout.yml
     parameters:
       kind: nuget
   - template: ./windows-layout-steps.yml
